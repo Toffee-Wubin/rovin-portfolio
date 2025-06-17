@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rovin Biron | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe4f1;
+      color: #333;
+      scroll-behavior: smooth;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header, section, footer {
+      padding: 2rem;
+    }
+    nav {
+      background-color: #fdd0e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+    .nav-left img {
+      height: 40px;
+      margin-right: 0.8rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #c2185b;
+      margin-left: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: #666;
+      height: 30px;
+    }
+    .projects, .skills, #contact {
+      background-color: #fff0f5;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .project-item {
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .project-item:hover {
+      transform: translateY(-5px);
+    }
+    .project-item .btn {
+      margin-top: 0.5rem;
+    }
+    .skills {
+      background-color: #f9dbe9;
+    }
+    footer {
+      background-color: #fdd0e8;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem;
+    }
+    footer img {
+      height: 80px;
+      margin-right: 1rem;
+    }
+    footer .footer-text {
+      text-align: left;
+    }
+    .btn {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+    }
+    .dark-mode nav {
+      background-color: #2a2a2a;
+    }
+    .dark-mode .projects, .dark-mode .skills, .dark-mode #contact {
+      background-color: #333;
+    }
+    .toggle-btn {
+      margin-left: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      max-width: 600px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+    }
+    .modal-content li {
+      margin-bottom: 0.5rem;
+    }
+    .modal-content button {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="img/rovin-logo.png" alt="Rovin Logo">
+    </div>
+    <div>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a onclick="openAboutModal()">About Me</a>
+      <a href="#contact">Contact</a>
+      <button class="btn toggle-btn" onclick="toggleDarkMode()">🌙</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Rovin Christopher R. Biron</h1>
+    <p class="tagline" id="tagline"></p>
+    <p>A second-year BS - IT student at NU-MOA College.</p>
+  </header>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-item">
+      <h3>This Portfolio</h3>
+      <p>Personal webpage showcasing Rovin's work and skills.</p>
+      <a href="https://fluffy-tarsier-2aac08.netlify.app/" target="_blank" class="btn">View</a>
+    </div>
+    <div class="project-item">
+      <h3>Accounting Dashboard</h3>
+      <p>Dashboard UI for accounting tasks.</p>
+      <a href="https://venerable-sunflower-bd8e56.netlify.app/" target="_blank" class="btn">View</a>
+    </div>
+    <div class="project-item">
+      <h3>Birthday Invite</h3>
+      <p>Interactive birthday invitation with message memory.</p>
+      <a href="https://lustrous-kitsune-861f91.netlify.app/" target="_blank" class="btn">View</a>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills & Technologies</h2>
+    <ul style="display: inline-block; text-align: left;">
+      <li>Languages: Java, HTML, CSS</li>
+      <li>Tools: MS Access, Xampp, PhpMyAdmin, Netlify</li>
+      <li>Level: Advanced Beginner</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: rovinbiron123@gmail.com</p>
+    <p>Phone: 09154575990</p>
+    <p>Facebook: <a href="https://www.facebook.com/rovin.biron.2024" target="_blank">rovin.biron.2024</a></p>
+  </section>
+
+  <div class="modal" id="aboutModal">
+    <div class="modal-content">
+      <h2>About Me</h2>
+      <ul>
+        <li><strong>Birthday:</strong> May 16, 2002</li>
+        <li><strong>Age:</strong> 23</li>
+        <li><strong>Favorite Games:</strong> Tekken, League of Legends, Mobile Legends</li>
+        <li><strong>Music Genre:</strong> OPM, Rock, Metal</li>
+        <li><strong>Movie:</strong> Mission Impossible</li>
+        <li><strong>Color:</strong> Pink</li>
+        <li><strong>TV Show:</strong> Moon Knight</li>
+        <li><strong>Place:</strong> Home (more comfortable at home but love places that feel like home)</li>
+        <li><strong>Programming Comfort Zone:</strong> JavaScript, HTML</li>
+        <li><strong>Good At:</strong> MOBA 5v5, writing clean code (sometimes), boxing, table tennis</li>
+        <li><strong>Hobbies:</strong> Exploring tech, watching coding reels, playing MOBA games, Roblox (new), sparring in the boxing gym</li>
+      </ul>
+      <button class="btn" onclick="closeAboutModal()">Back to Home</button>
+    </div>
+  </div>
+
+  <footer>
+    <img src="img/rovin-logo.png" alt="Rovin Logo">
+    <div class="footer-text">
+      <p><strong>Rovin Christopher R. Biron</strong></p>
+      <p>Aspiring Web Developer & Tech Explorer</p>
+      <p>&copy; 2025 Rovin Biron. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const phrases = [
+      "Aspiring Web Developer & Tech Explorer",
+      "Clean Code Enthusiast",
+      "Boxing and MOBA Gamer"
+    ];
+    let index = 0, char = 0;
+    const tagline = document.getElementById("tagline");
+
+    function type() {
+      if (char < phrases[index].length) {
+        tagline.textContent += phrases[index].charAt(char);
+        char++;
+        setTimeout(type, 80);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+
+    function erase() {
+      if (char > 0) {
+        tagline.textContent = phrases[index].substring(0, char - 1);
+        char--;
+        setTimeout(erase, 50);
+      } else {
+        index = (index + 1) % phrases.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function openAboutModal() {
+      document.getElementById("aboutModal").style.display = "flex";
+    }
+
+    function closeAboutModal() {
+      document.getElementById("aboutModal").style.display = "none";
+    }
+
+    window.addEventListener("click", function(event) {
+      const modal = document.getElementById("aboutModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
